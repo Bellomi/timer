@@ -29,3 +29,8 @@ export default {
 - Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
 - Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
 # timer
+
+
+![Captura de Tela 2025-01-12 às 11 09 04](https://github.com/user-attachments/assets/b15d72ae-db39-4e4d-9268-b59262b77d81)
+
+![Captura de Tela 2025-01-12 às 11 09 19](https://github.com/user-attachments/assets/d266c6bf-65d9-4a40-91c1-a44d30ec0df3)
