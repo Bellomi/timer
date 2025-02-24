@@ -7,18 +7,27 @@ import {
   TaskInput,
   TimerContainer,
 } from "./styles";
+import { useForm } from "react-hook-form";
 
 export const Home = () => {
+  const { register, handleSubmit, watch } = useForm();
+
+  function handleCreateNew(data: unknown) {
+    console.log(data);
+  }
+
+  const task = watch("task");
+
   return (
     <HomeContainer data-tesid="home-container">
-      <form action="">
+      <form onSubmit={handleSubmit(handleCreateNew)} action="">
         <FormContainer data-testid="form-group">
           <label htmlFor="task">The task to be done is</label>
           <TaskInput
             placeholder="name a task"
-            type="text"
+            id="task"
             list="task-list"
-            autoComplete="off"
+            {...register("task")}
           />
 
           <datalist id="task-list">
@@ -36,6 +45,7 @@ export const Home = () => {
             step={5}
             min={5}
             max={60}
+            {...register("minutesAmount", { valueAsNumber: true })}
           />
 
           <span>minutes</span>
@@ -49,7 +59,7 @@ export const Home = () => {
           <span>0</span>
         </TimerContainer>
 
-        <button disabled type="submit">
+        <button disabled={!task} type="submit">
           <Play />
           Start
         </button>
